@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E285F14E86B02617BCBE5E /* Pods_TheList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02864D836AD5B3E2B96F00D9 /* Pods_TheList.framework */; };
+		8B5DADE11D088E84008B7978 /* TLListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5DADE01D088E84008B7978 /* TLListModel.swift */; };
+		8B5DADE31D08F51D008B7978 /* TLUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5DADE21D08F51D008B7978 /* TLUserModel.swift */; };
 		8B9C2FA51CD63F7400547437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C2FA41CD63F7400547437 /* AppDelegate.swift */; };
 		8B9C2FA71CD63F7400547437 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C2FA61CD63F7400547437 /* FirstViewController.swift */; };
 		8B9C2FA91CD63F7400547437 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C2FA81CD63F7400547437 /* SecondViewController.swift */; };
@@ -15,6 +18,11 @@
 		8B9C2FB11CD63F7400547437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C2FAF1CD63F7400547437 /* LaunchScreen.storyboard */; };
 		8B9C2FBC1CD63F7400547437 /* TheListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C2FBB1CD63F7400547437 /* TheListTests.swift */; };
 		8B9C2FC81CD63F8E00547437 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9C2FC71CD63F8E00547437 /* CloudKit.framework */; };
+		BC3978991D1753C300A691BA /* TLSpecificListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3978981D1753C300A691BA /* TLSpecificListViewController.swift */; };
+		BC6856631D18BFF500EC36DD /* CKRecordExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856621D18BFF500EC36DD /* CKRecordExtention.swift */; };
+		BC6856651D1A315600EC36DD /* TLCloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */; };
+		BC6856671D1A497A00EC36DD /* TLErrorHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856661D1A497A00EC36DD /* TLErrorHander.swift */; };
+		BC6856691D1A4FF900EC36DD /* TLAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02864D836AD5B3E2B96F00D9 /* Pods_TheList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4A013F4D556CBA1635E3B4 /* Pods-TheList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheList/Pods-TheList.debug.xcconfig"; sourceTree = "<group>"; };
+		8B5DADE01D088E84008B7978 /* TLListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLListModel.swift; sourceTree = "<group>"; };
+		8B5DADE21D08F51D008B7978 /* TLUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLUserModel.swift; sourceTree = "<group>"; };
 		8B9C2FA11CD63F7300547437 /* TheList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9C2FA41CD63F7400547437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B9C2FA61CD63F7400547437 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +53,12 @@
 		8B9C2FBD1CD63F7400547437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B9C2FC61CD63F8B00547437 /* TheList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TheList.entitlements; sourceTree = "<group>"; };
 		8B9C2FC71CD63F8E00547437 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9666858364CA6C0AB22B1CBD /* Pods-TheList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheList/Pods-TheList.release.xcconfig"; sourceTree = "<group>"; };
+		BC3978981D1753C300A691BA /* TLSpecificListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLSpecificListViewController.swift; sourceTree = "<group>"; };
+		BC6856621D18BFF500EC36DD /* CKRecordExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKRecordExtention.swift; sourceTree = "<group>"; };
+		BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLCloudKitHelper.swift; sourceTree = "<group>"; };
+		BC6856661D1A497A00EC36DD /* TLErrorHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLErrorHander.swift; sourceTree = "<group>"; };
+		BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLAlertManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9C2FC81CD63F8E00547437 /* CloudKit.framework in Frameworks */,
+				32E285F14E86B02617BCBE5E /* Pods_TheList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10CC757D97BA64B901B1FBDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E4A013F4D556CBA1635E3B4 /* Pods-TheList.debug.xcconfig */,
+				9666858364CA6C0AB22B1CBD /* Pods-TheList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B5650021CE1BF0000E740A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B5DADE21D08F51D008B7978 /* TLUserModel.swift */,
+				8B5DADE01D088E84008B7978 /* TLListModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8B9C2F981CD63F7300547437 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +106,8 @@
 				8B9C2FA31CD63F7400547437 /* TheList */,
 				8B9C2FBA1CD63F7400547437 /* TheListTests */,
 				8B9C2FA21CD63F7300547437 /* Products */,
+				10CC757D97BA64B901B1FBDB /* Pods */,
+				D9524E6BF1CE076A0DC18CA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,9 +128,15 @@
 				8B9C2FA61CD63F7400547437 /* FirstViewController.swift */,
 				8B9C2FA81CD63F7400547437 /* SecondViewController.swift */,
 				8B9C2FAA1CD63F7400547437 /* Main.storyboard */,
+				BC3978981D1753C300A691BA /* TLSpecificListViewController.swift */,
 				8B9C2FAD1CD63F7400547437 /* Assets.xcassets */,
 				8B9C2FAF1CD63F7400547437 /* LaunchScreen.storyboard */,
 				8B9C2FB21CD63F7400547437 /* Info.plist */,
+				8B5650021CE1BF0000E740A3 /* Models */,
+				BC6856621D18BFF500EC36DD /* CKRecordExtention.swift */,
+				BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */,
+				BC6856661D1A497A00EC36DD /* TLErrorHander.swift */,
+				BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */,
 			);
 			path = TheList;
 			sourceTree = "<group>";
@@ -105,6 +150,14 @@
 			path = TheListTests;
 			sourceTree = "<group>";
 		};
+		D9524E6BF1CE076A0DC18CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02864D836AD5B3E2B96F00D9 /* Pods_TheList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B9C2FC01CD63F7400547437 /* Build configuration list for PBXNativeTarget "TheList" */;
 			buildPhases = (
+				7A99362A947CBDFF76790B1C /* Check Pods Manifest.lock */,
 				8B9C2F9D1CD63F7300547437 /* Sources */,
 				8B9C2F9E1CD63F7300547437 /* Frameworks */,
 				8B9C2F9F1CD63F7300547437 /* Resources */,
+				F7E971069703AE7B250697F9 /* Embed Pods Frameworks */,
+				C79E508FBB4AD12F24440C0C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,13 +263,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A99362A947CBDFF76790B1C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C79E508FBB4AD12F24440C0C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheList/Pods-TheList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7E971069703AE7B250697F9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheList/Pods-TheList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B9C2F9D1CD63F7300547437 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6856651D1A315600EC36DD /* TLCloudKitHelper.swift in Sources */,
+				BC6856631D18BFF500EC36DD /* CKRecordExtention.swift in Sources */,
+				BC6856691D1A4FF900EC36DD /* TLAlertManager.swift in Sources */,
 				8B9C2FA91CD63F7400547437 /* SecondViewController.swift in Sources */,
 				8B9C2FA51CD63F7400547437 /* AppDelegate.swift in Sources */,
+				8B5DADE11D088E84008B7978 /* TLListModel.swift in Sources */,
+				8B5DADE31D08F51D008B7978 /* TLUserModel.swift in Sources */,
+				BC3978991D1753C300A691BA /* TLSpecificListViewController.swift in Sources */,
+				BC6856671D1A497A00EC36DD /* TLErrorHander.swift in Sources */,
 				8B9C2FA71CD63F7400547437 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +452,7 @@
 		};
 		8B9C2FC11CD63F7400547437 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E4A013F4D556CBA1635E3B4 /* Pods-TheList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TheList/TheList.entitlements;
@@ -353,6 +465,7 @@
 		};
 		8B9C2FC21CD63F7400547437 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9666858364CA6C0AB22B1CBD /* Pods-TheList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TheList/TheList.entitlements;
@@ -406,6 +519,7 @@
 				8B9C2FC21CD63F7400547437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B9C2FC31CD63F7400547437 /* Build configuration list for PBXNativeTarget "TheListTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +528,7 @@
 				8B9C2FC51CD63F7400547437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
