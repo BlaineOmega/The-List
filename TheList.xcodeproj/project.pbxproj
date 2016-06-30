@@ -23,6 +23,13 @@
 		BC6856651D1A315600EC36DD /* TLCloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */; };
 		BC6856671D1A497A00EC36DD /* TLErrorHander.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856661D1A497A00EC36DD /* TLErrorHander.swift */; };
 		BC6856691D1A4FF900EC36DD /* TLAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */; };
+		BC68566B1D1C626800EC36DD /* Slim Joe.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC68566A1D1C626800EC36DD /* Slim Joe.otf */; };
+		BC68566F1D21D95500EC36DD /* TLUtilitiesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC68566E1D21D95500EC36DD /* TLUtilitiesHelper.swift */; };
+		BC6856711D220D6C00EC36DD /* TLContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6856701D220D6C00EC36DD /* TLContactViewController.swift */; };
+		BCA5B6321D235EEE0072678D /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA5B62F1D235EEE0072678D /* Add.png */; };
+		BCA5B6331D235EEE0072678D /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA5B6301D235EEE0072678D /* Add@2x.png */; };
+		BCA5B6341D235EEE0072678D /* Add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA5B6311D235EEE0072678D /* Add@3x.png */; };
+		BCA5B6371D24907E0072678D /* TLInviteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA5B6361D24907E0072678D /* TLInviteUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,14 @@
 		BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLCloudKitHelper.swift; sourceTree = "<group>"; };
 		BC6856661D1A497A00EC36DD /* TLErrorHander.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLErrorHander.swift; sourceTree = "<group>"; };
 		BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLAlertManager.swift; sourceTree = "<group>"; };
+		BC68566A1D1C626800EC36DD /* Slim Joe.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Slim Joe.otf"; sourceTree = "<group>"; };
+		BC68566D1D21B1AB00EC36DD /* Big John.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Big John.otf"; sourceTree = "<group>"; };
+		BC68566E1D21D95500EC36DD /* TLUtilitiesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLUtilitiesHelper.swift; sourceTree = "<group>"; };
+		BC6856701D220D6C00EC36DD /* TLContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLContactViewController.swift; sourceTree = "<group>"; };
+		BCA5B62F1D235EEE0072678D /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
+		BCA5B6301D235EEE0072678D /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		BCA5B6311D235EEE0072678D /* Add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@3x.png"; sourceTree = "<group>"; };
+		BCA5B6361D24907E0072678D /* TLInviteUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLInviteUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,20 +138,17 @@
 		8B9C2FA31CD63F7400547437 /* TheList */ = {
 			isa = PBXGroup;
 			children = (
+				BCA5B62E1D235EEE0072678D /* Images */,
+				BC68566C1D1C626C00EC36DD /* Fonts */,
 				8B9C2FC61CD63F8B00547437 /* TheList.entitlements */,
 				8B9C2FA41CD63F7400547437 /* AppDelegate.swift */,
-				8B9C2FA61CD63F7400547437 /* FirstViewController.swift */,
-				8B9C2FA81CD63F7400547437 /* SecondViewController.swift */,
+				BC6856731D220D9100EC36DD /* View Controllers */,
 				8B9C2FAA1CD63F7400547437 /* Main.storyboard */,
-				BC3978981D1753C300A691BA /* TLSpecificListViewController.swift */,
 				8B9C2FAD1CD63F7400547437 /* Assets.xcassets */,
 				8B9C2FAF1CD63F7400547437 /* LaunchScreen.storyboard */,
 				8B9C2FB21CD63F7400547437 /* Info.plist */,
 				8B5650021CE1BF0000E740A3 /* Models */,
-				BC6856621D18BFF500EC36DD /* CKRecordExtention.swift */,
-				BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */,
-				BC6856661D1A497A00EC36DD /* TLErrorHander.swift */,
-				BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */,
+				BC6856721D220D7A00EC36DD /* Utilities */,
 			);
 			path = TheList;
 			sourceTree = "<group>";
@@ -148,6 +160,57 @@
 				8B9C2FBD1CD63F7400547437 /* Info.plist */,
 			);
 			path = TheListTests;
+			sourceTree = "<group>";
+		};
+		BC68566C1D1C626C00EC36DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BC68566D1D21B1AB00EC36DD /* Big John.otf */,
+				BC68566A1D1C626800EC36DD /* Slim Joe.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		BC6856721D220D7A00EC36DD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BC6856621D18BFF500EC36DD /* CKRecordExtention.swift */,
+				BC6856641D1A315600EC36DD /* TLCloudKitHelper.swift */,
+				BC6856661D1A497A00EC36DD /* TLErrorHander.swift */,
+				BC6856681D1A4FF900EC36DD /* TLAlertManager.swift */,
+				BC68566E1D21D95500EC36DD /* TLUtilitiesHelper.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		BC6856731D220D9100EC36DD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B9C2FA61CD63F7400547437 /* FirstViewController.swift */,
+				8B9C2FA81CD63F7400547437 /* SecondViewController.swift */,
+				BC6856701D220D6C00EC36DD /* TLContactViewController.swift */,
+				BC3978981D1753C300A691BA /* TLSpecificListViewController.swift */,
+				BCA5B6361D24907E0072678D /* TLInviteUser.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BCA5B62E1D235EEE0072678D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BCA5B6351D2360C20072678D /* Plus Icon */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		BCA5B6351D2360C20072678D /* Plus Icon */ = {
+			isa = PBXGroup;
+			children = (
+				BCA5B62F1D235EEE0072678D /* Add.png */,
+				BCA5B6301D235EEE0072678D /* Add@2x.png */,
+				BCA5B6311D235EEE0072678D /* Add@3x.png */,
+			);
+			name = "Plus Icon";
 			sourceTree = "<group>";
 		};
 		D9524E6BF1CE076A0DC18CA8 /* Frameworks */ = {
@@ -249,7 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9C2FB11CD63F7400547437 /* LaunchScreen.storyboard in Resources */,
+				BCA5B6321D235EEE0072678D /* Add.png in Resources */,
+				BCA5B6331D235EEE0072678D /* Add@2x.png in Resources */,
+				BCA5B6341D235EEE0072678D /* Add@3x.png in Resources */,
 				8B9C2FAE1CD63F7400547437 /* Assets.xcassets in Resources */,
+				BC68566B1D1C626800EC36DD /* Slim Joe.otf in Resources */,
 				8B9C2FAC1CD63F7400547437 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,11 +383,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6856711D220D6C00EC36DD /* TLContactViewController.swift in Sources */,
 				BC6856651D1A315600EC36DD /* TLCloudKitHelper.swift in Sources */,
 				BC6856631D18BFF500EC36DD /* CKRecordExtention.swift in Sources */,
 				BC6856691D1A4FF900EC36DD /* TLAlertManager.swift in Sources */,
+				BC68566F1D21D95500EC36DD /* TLUtilitiesHelper.swift in Sources */,
 				8B9C2FA91CD63F7400547437 /* SecondViewController.swift in Sources */,
 				8B9C2FA51CD63F7400547437 /* AppDelegate.swift in Sources */,
+				BCA5B6371D24907E0072678D /* TLInviteUser.swift in Sources */,
 				8B5DADE11D088E84008B7978 /* TLListModel.swift in Sources */,
 				8B5DADE31D08F51D008B7978 /* TLUserModel.swift in Sources */,
 				BC3978991D1753C300A691BA /* TLSpecificListViewController.swift in Sources */,
@@ -458,6 +528,7 @@
 				CODE_SIGN_ENTITLEMENTS = TheList/TheList.entitlements;
 				INFOPLIST_FILE = TheList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = BlaineAnderson.TheList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -15,7 +15,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var list: TLListModel!
     var specificList: CKRecord!
     
-    var tableData: [String] = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
+
 
 
     override func viewDidLoad()
@@ -38,11 +38,12 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell:UITableViewCell = listTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let cell:UITableViewCell = listTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         let list: CKRecord = self.list.lists[indexPath.row]
         cell.textLabel?.text = list.valueForKey("ListName") as? String
-//    cell.textLabel?.text = self.tableData[indexPath.row]
-    return cell
+        cell.textLabel?.font = UIFont (name: "Slim Joe", size: 20)
+        cell.accessoryType = .DisclosureIndicator
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -50,6 +51,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         print(self.list.lists[indexPath.row])
         
         specificList = self.list.lists[indexPath.row]
+        specificList.recordID.recordName
         performSegueWithIdentifier("TLSpecificListSegue", sender: nil)
     }
     
@@ -58,6 +60,25 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             if let destinationVC = segue.destinationViewController as? TLSpecificListViewController{
                 destinationVC.listObject = specificList
             }
+        }
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == .Delete
+        {
+            let cloudkit = TLCloudKitHelper()            
+            cloudkit.deleteListItem(self.list.lists[indexPath.row], callback: { (listName) in
+                TLAlertHelper.notifyUser("List Deleted", message: NSString(format: "List for %@ successfully deleted", listName) as String)
+                self.listTableView.reloadData()
+            })
+            
+            
         }
     }
 
