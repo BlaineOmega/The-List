@@ -23,6 +23,8 @@ class SecondViewController: UIViewController {
 
         listNameTextField.layer.borderColor = TLUtilitiesHelper.UIColorFromHex(0x6B4A87).CGColor
         listNameTextField.layer.borderWidth = 1
+        
+        print("List User Record: ", TLUserModel.sharedInstance.userId)
     }
 
     @IBAction func createListAction(sender: AnyObject) {

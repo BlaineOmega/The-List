@@ -9,5 +9,9 @@
 import Foundation
 
 class TLUserModel: NSObject {
-
+    var userId : String = ""
+    var userName : String = ""
+    var tagline : String = ""
+    static let sharedInstance = TLUserModel()
+    
 }

@@ -17,9 +17,9 @@ class TLCloudKitHelper {
     
     
     init(){
-        self.container = CKContainer.defaultContainer() //1
-        self.publicDB = container.publicCloudDatabase //2
-        self.privateDB = container.privateCloudDatabase //3
+        self.container = CKContainer.defaultContainer()
+        self.publicDB = container.publicCloudDatabase
+        self.privateDB = container.privateCloudDatabase 
     }
     
     func saveItemRecord(item: String, listId: String) {
@@ -37,11 +37,15 @@ class TLCloudKitHelper {
     }
     
     func createList(listName: String, callback:(String)->()){
-        let itemRecord = CKRecord(recordType: "List")
+        let listRecord = CKRecord(recordType: "List")
         if(!listName.isEmpty){
-            itemRecord.setValue(listName, forKey: "ListName")
+            listRecord.setValue(listName, forKey: "ListName")
+            let reference = CKReference(recordID: CKRecordID( recordName: TLUserModel.sharedInstance.userId), action: .None)
+            var referenceArray = [CKReference]()
+            referenceArray.append(reference)
+            listRecord.setObject(referenceArray, forKey: "Participants")
         }
-        self.publicDB.saveRecord(itemRecord, completionHandler: { (record, error) -> Void in
+        self.publicDB.saveRecord(listRecord, completionHandler: { (record, error) -> Void in
             if let saveError = error {
                 NSLog("There was an error saving the record: %@", saveError)
             }else{
@@ -77,7 +81,7 @@ class TLCloudKitHelper {
             if let err = error{
                 //handle error
                 #if DEBUG
-                print("There was an error: %@", err)
+                    print("There was an error: %@", err)
                 #endif
                 TLAlertHelper.notifyUser("Error", message: "There was an error deleting your record")
             }else{
@@ -86,11 +90,21 @@ class TLCloudKitHelper {
         }
     }
     
-    func getUserRecord() {
-#if DEBUG
-        print("Getting user record")
-#endif
+    func getUserRecord(callback:(String)->()){
+        if(TLUserModel.sharedInstance.userId.isEmpty){
+            #if DEBUG
+                print("Getting user record")
+            #endif
+            container.fetchUserRecordIDWithCompletionHandler { (record, error) in
+                TLUserModel.sharedInstance.userId = (record?.recordName)!
+                #if DEBUG
+                    print("User record: ", TLUserModel.sharedInstance.userId)
+                #endif
+                callback(TLUserModel.sharedInstance.userId)
+            }
+        }else{
+            callback(TLUserModel.sharedInstance.userId)
+        }
     }
-
     
 }
