@@ -11,26 +11,35 @@ import UIKit
 class SecondViewController: UIViewController {
     @IBOutlet weak var createListButton: UIButton!
     @IBOutlet weak var textInputArea: UITextView!
-    
+    @IBOutlet weak var listNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        createListButton.layer.borderColor  = TLUtilitiesHelper.UIColorFromHex(0x6B4A87).CGColor
+        createListButton.titleLabel?.font   = UIFont (name: "Slim Joe", size: 28)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        textInputArea.layer.borderColor     = TLUtilitiesHelper.UIColorFromHex(0x6B4A87).CGColor
+        textInputArea.layer.borderWidth     = 1
+
+        listNameTextField.layer.borderColor = TLUtilitiesHelper.UIColorFromHex(0x6B4A87).CGColor
+        listNameTextField.layer.borderWidth = 1
+        
+        print("List User Record: ", TLUserModel.sharedInstance.userId)
     }
 
     @IBAction func createListAction(sender: AnyObject) {
         let cloudkit = TLCloudKitHelper()
         let listArray = createListFromTextField(textInputArea.text)
-        if (!listArray.isEmpty){
-            for item in listArray{
-                cloudkit.saveItemRecord(item)
+
+        cloudkit.createList(listNameTextField.text!) { (response) in
+            let listId = response
+            if (!listArray.isEmpty){
+                for item in listArray{
+                    cloudkit.saveItemRecord(item, listId: listId)
+                }
             }
         }
+        
     }
     
     func createListFromTextField(listText: String) -> [String] {

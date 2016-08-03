@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let cloudkit = TLCloudKitHelper()
+        cloudkit.getUserRecord { (recordId) in
+            #if DEBUG
+                print("User Record: ", recordId)
+            #endif
+        }
         return true
     }
 

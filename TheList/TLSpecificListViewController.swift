@@ -14,23 +14,39 @@ class TLSpecificListViewController: UIViewController,UITableViewDelegate,UITable
     
     @IBOutlet weak var specificListTableView: UITableView!
     
-    var tableData: [CKReference] = []
+      var tableData: [CKRecord] = []
+//    var tableData: [String]             = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
     var listObject: CKRecord!
     
 
     
     
     func initWithListObject(listObject: CKRecord) {
-        self.tableData = listObject.valueForKey("ListItems") as! [CKReference]
         self.listObject = listObject
     }
     
     override func viewDidLoad() {
-        self.tableData                      = listObject.valueForKey("ListItems") as! [CKReference]
+
         self.navigationItem.title           = listObject.valueForKey("ListName") as? String
         self.navigationItem.hidesBackButton = false
-
+        
         specificListTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let cloudkit = TLCloudKitHelper()
+        let listId = listObject.recordID.recordName as String
+        
+        cloudkit.getListItems(listId) { (responseArray) in
+            self.tableData = responseArray
+            //Update UI Thread
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                self.specificListTableView.reloadData()
+                self.specificListTableView.hidden = false
+            })
+
+        }
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,14 +55,12 @@ class TLSpecificListViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-         let cell:UITableViewCell = specificListTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         
-//        let list: CKRecord = self.tableData[indexPath.row]
-//        cell.textLabel?.text = list.valueForKey("ListName") as? String
-        
-        //let item = self.tableData[indexPath.row] as? [CKReference]
-        //cell.textLabel?.text = item.id as? String
-        //cell.textLabel?.text = item.
+        let cell:UITableViewCell = specificListTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let item = self.tableData[indexPath.row]
+        cell.textLabel?.text = item.valueForKey("ItemName") as? String
+        cell.textLabel?.font = UIFont (name: "Slim Joe", size: 24)
+        cell.accessoryType = .DetailButton
         return cell
     }
 
