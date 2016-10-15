@@ -18,7 +18,7 @@ class TLInviteUser: UIViewController {
     
     
     
-    @IBAction func addFriendAction(sender: AnyObject) {
+    @IBAction func addFriendAction(_ sender: AnyObject) {
         print("Add User: ", (appleIdTextEdit.text)! as String)
         
         

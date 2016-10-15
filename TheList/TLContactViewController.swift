@@ -14,18 +14,18 @@ class TLContactViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet var contactTableView: UITableView!
     
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:UIImage(named:"Add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: .Done, target: self, action: #selector(TLContactViewController.addContact(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image:UIImage(named:"Add")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: .done, target: self, action: #selector(TLContactViewController.addContact(_:)))
         self.title = "Contacts"
         self.navigationController!.navigationBar.barTintColor = TLUtilitiesHelper.UIColorFromHex(0x6B4A87, alpha: 1.0)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont (name: "Slim Joe", size: 20)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont (name: "Slim Joe", size: 20)!, NSForegroundColorAttributeName : UIColor.white]
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5;
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = contactTableView.dequeueReusableCellWithIdentifier("contactCell")! as UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = contactTableView.dequeueReusableCell(withIdentifier: "contactCell")! as UITableViewCell
         cell.textLabel?.text = "Annabell Sussman"
         //Need to get current users from cloudkit.
 //        let list: CKRecord = self.list.lists[indexPath.row]
@@ -35,9 +35,9 @@ class TLContactViewController: UIViewController,UITableViewDelegate,UITableViewD
         return cell
     }
     
-    func addContact(sender: UIBarButtonItem) {
+    func addContact(_ sender: UIBarButtonItem) {
         print("Testing Function")
-        performSegueWithIdentifier("TLAddContactSegue", sender: nil)
+        performSegue(withIdentifier: "TLAddContactSegue", sender: nil)
     }
 
 

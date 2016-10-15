@@ -29,7 +29,7 @@ class TLListModel: NSObject {
         let query = CKQuery(recordType: "List", predicate: predicate)
         
         
-        cloudkit.publicDB.performQuery(query, inZoneWithID: nil) { (results, error) -> Void in
+        cloudkit.publicDB.perform(query, inZoneWith: nil) { (results, error) -> Void in
             if error != nil {
                 print(error)
             }
@@ -40,7 +40,7 @@ class TLListModel: NSObject {
                     self.lists.append(result )
                 }
                 
-                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                OperationQueue.main.addOperation({ () -> Void in
                    viewController.listTableView.reloadData()
                 })
             }

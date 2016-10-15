@@ -14,53 +14,52 @@ class TLSpecificListViewController: UIViewController,UITableViewDelegate,UITable
     
     @IBOutlet weak var specificListTableView: UITableView!
     
-      var tableData: [CKRecord] = []
-//    var tableData: [String]             = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
+    var tableData: [CKRecord] = []
     var listObject: CKRecord!
     
 
     
     
-    func initWithListObject(listObject: CKRecord) {
+    func initWithListObject(_ listObject: CKRecord) {
         self.listObject = listObject
     }
     
     override func viewDidLoad() {
 
-        self.navigationItem.title           = listObject.valueForKey("ListName") as? String
+        self.navigationItem.title           = listObject.value(forKey: "ListName") as? String
         self.navigationItem.hidesBackButton = false
         
-        specificListTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        specificListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         let cloudkit = TLCloudKitHelper()
-        let listId = listObject.recordID.recordName as String
+        let listId = listObject
         
-        cloudkit.getListItems(listId) { (responseArray) in
+        cloudkit.getListItems(listId!) { (responseArray) in
             self.tableData = responseArray
             //Update UI Thread
-            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            OperationQueue.main.addOperation({ () -> Void in
                 self.specificListTableView.reloadData()
-                self.specificListTableView.hidden = false
+                self.specificListTableView.isHidden = false
             })
 
         }
 
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return tableData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = specificListTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        let item = self.tableData[indexPath.row]
-        cell.textLabel?.text = item.valueForKey("ItemName") as? String
+        let cell:UITableViewCell = specificListTableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let item = self.tableData[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = item.value(forKey: "ItemName") as? String
         cell.textLabel?.font = UIFont (name: "Slim Joe", size: 24)
-        cell.accessoryType = .DetailButton
+        cell.accessoryType = .detailButton
         return cell
     }
 

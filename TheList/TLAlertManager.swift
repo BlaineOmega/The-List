@@ -12,17 +12,16 @@ import UIKit
 class TLAlertHelper: UIAlertController {
     
     
-    static func notifyUser(title: String, message: String) -> Void
+    static func notifyUser(_ title: String, message: String, sender: AnyObject) -> Void
     {
         let alert = UIAlertController(title: title,
                                       message: message,
-                                      preferredStyle: UIAlertControllerStyle.Alert)
+                                      preferredStyle: UIAlertControllerStyle.alert)
         
         let cancelAction = UIAlertAction(title: "OK",
-                                         style: .Cancel, handler: nil)
+                                         style: .cancel, handler: nil)
         
         alert.addAction(cancelAction)
-//        self.presentViewController(alert, animated: true,
-//                                   completion: nil)
+        sender.present(alert, animated: true, completion: nil)
     }
 }

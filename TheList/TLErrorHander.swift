@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum TLError: ErrorType {
-    case ItemNotSaved
+enum TLError: Error {
+    case itemNotSaved
 }
