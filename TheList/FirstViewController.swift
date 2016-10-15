@@ -21,10 +21,10 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let myContainer = CKContainer.defaultContainer()
+        let myContainer = CKContainer.default()
         list = TLListModel(container: myContainer, viewController: self)
         // Do any additional setup after loading the view, typically from a nib.
-        listTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,49 +32,48 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of items: %i", list.lists.count)
     return list.lists.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = listTableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
-        let list: CKRecord = self.list.lists[indexPath.row]
-        cell.textLabel?.text = list.valueForKey("ListName") as? String
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = listTableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let list: CKRecord = self.list.lists[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = list.value(forKey: "ListName") as? String
         cell.textLabel?.font = UIFont (name: "Slim Joe", size: 20)
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("This object has been selected")
-        print(self.list.lists[indexPath.row])
+        print(self.list.lists[(indexPath as NSIndexPath).row])
         
-        specificList = self.list.lists[indexPath.row]
-        specificList.recordID.recordName
-        performSegueWithIdentifier("TLSpecificListSegue", sender: nil)
+        specificList = self.list.lists[(indexPath as NSIndexPath).row]
+        performSegue(withIdentifier: "TLSpecificListSegue", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TLSpecificListSegue"{
-            if let destinationVC = segue.destinationViewController as? TLSpecificListViewController{
+            if let destinationVC = segue.destination as? TLSpecificListViewController{
                 destinationVC.listObject = specificList
             }
         }
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        if editingStyle == .Delete
+        if editingStyle == .delete
         {
             let cloudkit = TLCloudKitHelper()            
-            cloudkit.deleteListItem(self.list.lists[indexPath.row], callback: { (listName) in
-                TLAlertHelper.notifyUser("List Deleted", message: NSString(format: "List for %@ successfully deleted", listName) as String)
+            cloudkit.deleteListItem(self.list.lists[(indexPath as NSIndexPath).row], callback: { (listName) in
+                TLAlertHelper.notifyUser("List Deleted", message: NSString(format: "List for %@ successfully deleted", listName) as String, sender: self)
                 self.listTableView.reloadData()
             })
             
