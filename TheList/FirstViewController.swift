@@ -21,6 +21,7 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.title = "All My Lists"
         let myContainer = CKContainer.default()
         list = TLListModel(container: myContainer, viewController: self)
         if(listTableView != nil){
