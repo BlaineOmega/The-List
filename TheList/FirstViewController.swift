@@ -21,10 +21,13 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.title = "All My Lists"
         let myContainer = CKContainer.default()
         list = TLListModel(container: myContainer, viewController: self)
-        // Do any additional setup after loading the view, typically from a nib.
-        listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        if(listTableView != nil){
+            listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
