@@ -27,14 +27,9 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         listTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of items: %i", list.lists.count)
-    return list.lists.count
+        return list.lists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +69,13 @@ class FirstViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             let cloudkit = TLCloudKitHelper()            
             cloudkit.deleteListItem(self.list.lists[(indexPath as NSIndexPath).row], callback: { (listName) in
                 TLAlertHelper.notifyUser("List Deleted", message: NSString(format: "List for %@ successfully deleted", listName) as String, sender: self)
-                self.listTableView.reloadData()
+                
+                 let myContainer = CKContainer.default()
+                 self.list = TLListModel(container: myContainer, viewController: self)
+                DispatchQueue.main.async {
+                    self.listTableView.reloadData()
+                }
+                
             })
             
             

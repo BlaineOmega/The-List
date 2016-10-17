@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QnQ-Hx-Cdg" id="RRd-fY-Dhy">
-                                            <frame key="frameInset" width="561" height="44"/>
+                                            <frame key="frameInset" width="561" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -93,7 +93,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fnW-eZ-79I" id="AgZ-xq-oQS">
-                                            <frame key="frameInset" width="553" height="44"/>
+                                            <frame key="frameInset" width="553" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -258,7 +258,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5eh-js-9R3" id="hYE-ta-JlT">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -342,11 +342,11 @@
             </objects>
             <point key="canvasLocation" x="1334" y="1058"/>
         </scene>
-        <!--Item-->
+        <!--Contacts-->
         <scene sceneID="jm9-PH-NES">
             <objects>
                 <navigationController id="v7X-Hg-jN5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9YS-oL-jyO"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="Add" id="9YS-oL-jyO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Iv-MT-Cxe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -359,11 +359,11 @@
             </objects>
             <point key="canvasLocation" x="-216" y="763"/>
         </scene>
-        <!--First-->
+        <!--My Lists-->
         <scene sceneID="C9Q-Uv-GPF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Kg-de-Jzk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="My Lists" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ceo-Cg-tID">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -380,6 +380,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="33" height="33"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

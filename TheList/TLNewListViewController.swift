@@ -29,7 +29,6 @@ class TLNewListViewController: UIViewController, UITextViewDelegate {
         print("List User Record: ", TLUserModel.sharedInstance.userId)
         
         textInputArea.delegate = self
-        
         notificationId = "Notificationid"
         
         
@@ -51,7 +50,7 @@ class TLNewListViewController: UIViewController, UITextViewDelegate {
                     }
                 }
                 let fvc: FirstViewController = FirstViewController()
-                //self.present(fvc, animated: true, completion: nil)
+                self.present(fvc, animated: true, completion: nil)
             }
         }else{
             TLAlertHelper.notifyUser("Give the list a name", message: "You need to give you list a name...", sender:self)
