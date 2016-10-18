@@ -49,8 +49,13 @@ class TLNewListViewController: UIViewController, UITextViewDelegate {
                         cloudkit.saveItemRecord(item, listId: listId, recordName: response)
                     }
                 }
-                let fvc: FirstViewController = FirstViewController()
-                self.present(fvc, animated: true, completion: nil)
+              
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let fvc = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+                DispatchQueue.main.async {
+                    self.present(fvc, animated: true, completion: nil)
+                }
+                
             }
         }else{
             TLAlertHelper.notifyUser("Give the list a name", message: "You need to give you list a name...", sender:self)
